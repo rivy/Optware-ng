@@ -30,7 +30,7 @@ LFTP_MAINTAINER=NSLU2 Linux <nslu2-linux@yahoogroups.com>
 LFTP_DESCRIPTION=Sophisticated ftp/http client, file transfer program supporting a number of network protocols.
 LFTP_SECTION=net
 LFTP_PRIORITY=optional
-LFTP_DEPENDS=readline, ncurses, expat, libstdc++, gnutls
+LFTP_DEPENDS=readline, ncurses, expat, libstdc++, openssl
 ifeq (enable, $(GETTEXT_NLS))
 LFTP_DEPENDS +=, gettext
 endif
@@ -128,7 +128,7 @@ lftp-source: $(DL_DIR)/$(LFTP_SOURCE) $(LFTP_PATCHES)
 #
 $(LFTP_BUILD_DIR)/.configured: $(DL_DIR)/$(LFTP_SOURCE) $(LFTP_PATCHES) make/lftp.mk
 	$(MAKE) readline-stage ncurses-stage expat-stage libstdc++-stage
-	$(MAKE) libgcrypt-stage libgpg-error-stage libtasn1-stage gnutls-stage
+	$(MAKE) libgcrypt-stage libgpg-error-stage libtasn1-stage openssl-stage
 ifeq (enable, $(GETTEXT_NLS))
 	$(MAKE) gettext-stage
 endif
@@ -156,6 +156,7 @@ endif
 		--host=$(GNU_TARGET_NAME) \
 		--target=$(GNU_TARGET_NAME) \
 		--prefix=$(TARGET_PREFIX) \
+		--with-openssl \
 		--disable-nls \
 		--disable-static \
 		; \
@@ -171,6 +172,7 @@ endif
 		--host=$(GNU_TARGET_NAME) \
 		--target=$(GNU_TARGET_NAME) \
 		--prefix=$(TARGET_PREFIX) \
+		--with-openssl \
 		--disable-nls \
 		--disable-static \
 		; \
