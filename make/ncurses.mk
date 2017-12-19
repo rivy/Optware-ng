@@ -7,7 +7,7 @@
 NCURSES_DIR=$(BUILD_DIR)/ncurses
 NCURSES_SOURCE_DIR=$(SOURCE_DIR)/ncurses
 
-NCURSES_VERSION=5.7
+NCURSES_VERSION=6.0
 NCURSES=ncurses-$(NCURSES_VERSION)
 NCURSES_SITE=ftp://ftp.invisible-island.net/ncurses
 NCURSES_SOURCE=$(NCURSES).tar.gz
@@ -29,7 +29,7 @@ else
 NCURSES_FOR_OPTWARE_TARGET=ncurses
 endif
 
-NCURSES_IPK_VERSION=7
+NCURSES_IPK_VERSION=1
 
 NCURSES_PATCHES=$(NCURSES_SOURCE_DIR)/MKlib_gen_sh.patch
 
@@ -192,9 +192,9 @@ $(NCURSES_IPK) $(NCURSES_BASE_IPK) $(NCURSES_DEV_IPK): $(NCURSES_DIR)/.built
 	rm -f $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/lib/*.a
 	$(STRIP_COMMAND) $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/bin/clear \
 		$(NCURSES_IPK_DIR)$(TARGET_PREFIX)/bin/infocmp $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/bin/t*
-	$(STRIP_COMMAND) $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/lib/*$(SO).5$(DYLIB)
+	$(STRIP_COMMAND) $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/lib/*$(SO).6$(DYLIB)
 ifeq (darwin, $(TARGET_OS))
-	for dylib in $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/lib/*$(SO).5$(DYLIB); do \
+	for dylib in $(NCURSES_IPK_DIR)$(TARGET_PREFIX)/lib/*$(SO).6$(DYLIB); do \
 	$(TARGET_CROSS)install_name_tool -change $$dylib $(TARGET_PREFIX)/lib/`basename $$dylib` $$dylib; \
 	done
 endif
