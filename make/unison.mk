@@ -22,7 +22,7 @@
 # from your name or email address.  If you leave MAINTAINER set to
 # "NSLU2 Linux" other developers will feel free to edit.
 #
-UNISON_VERSION=2.48.3
+UNISON_VERSION=2.40.102
 UNISON_DIR=unison-$(UNISON_VERSION)
 UNISON_SITE=http://www.cis.upenn.edu/~bcpierce/unison/download/releases/$(UNISON_DIR)
 UNISON_SOURCE=$(UNISON_DIR).tar.gz
@@ -32,7 +32,7 @@ UNISON_DESCRIPTION=A cross-platform file-synchronization tool.
 UNISON_SECTION=net
 UNISON_PRIORITY=optional
 # bytecode version depends on ocaml
-UNISON_DEPENDS=ocaml
+##UNISON_DEPENDS=ocaml
 UNISON_SUGGESTS=
 UNISON_CONFLICTS=
 
