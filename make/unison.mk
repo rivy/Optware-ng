@@ -22,7 +22,7 @@
 # from your name or email address.  If you leave MAINTAINER set to
 # "NSLU2 Linux" other developers will feel free to edit.
 #
-UNISON_VERSION=2.27.57
+UNISON_VERSION=2.48.3
 UNISON_DIR=unison-$(UNISON_VERSION)
 UNISON_SITE=http://www.cis.upenn.edu/~bcpierce/unison/download/releases/$(UNISON_DIR)
 UNISON_SOURCE=$(UNISON_DIR).tar.gz
@@ -39,7 +39,7 @@ UNISON_CONFLICTS=
 #
 # UNISON_IPK_VERSION should be incremented when the ipk changes.
 #
-UNISON_IPK_VERSION=2
+UNISON_IPK_VERSION=1
 
 #
 # UNISON_CONFFILES should be a list of user-editable files
